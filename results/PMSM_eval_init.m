@@ -219,14 +219,13 @@ fopt = m1*Cost + m2*sum(Tstd) + m3*PowerLoss;
 
 %%
 currentsMapInit = linspace(0, max(currents), 21);
-PhaseAnglesInit = -180:5:180; %linspace(-180,180,20);
+PhaseAnglesInit = -180:5:180;
 TorquesMapInit = zeros(numel(currents), numel(PhaseAnglesInit), numel(angles));
 
 for iCurrents = 1:numel(currentsMapInit)
     for iPhase = 1:numel(PhaseAnglesInit)
         PMSMmotor.setCurrentOptions(ApplicationCurrent, PolePairs, NumberWindings, PhaseAnglesInit(iPhase));
         for iAngle = 1:numel(angles)
-%             disp(num2str(angles(iAngle)));
             PMSMmotor.setRotationAngle(angles(iAngle));
             PMSMmotor.setCurrent(currentsMapInit(iCurrents), angles(iAngle));
             PMSMmotor.solveMagneticPotentialNewton();

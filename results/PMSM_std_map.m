@@ -100,11 +100,3 @@ ylabel("Electric phase angle ($^\circ$)", 'Interpreter','latex')
 exportgraphics(f, 'TorqueRippleReduction.png')
 exportgraphics(f, 'TorqueRippleReduction.pdf')
 
-
-%%
-% phases = -180:5:180;
-% figure(42)
-% clf
-% plot(squeeze(TorquesMapInit(4,51,:)))
-% hold on
-% plot(squeeze(TorquesMapOpt(4,51,:)))

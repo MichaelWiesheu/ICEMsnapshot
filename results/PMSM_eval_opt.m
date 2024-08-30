@@ -26,8 +26,6 @@ opts.draw_geometry = false;
 [srfRotor, patchesRotor, opts] = PMSM_rotor1(opts);
 [srfStator, patchesStator, opts] = PMSM_stator1(opts);
 
-patchesRotor.Iron = [patchesRotor.Iron, 2,5]; % Add iron bridges
-patchesRotor.Air = setdiff(patchesRotor.Air, [2,5]); % Remove Air
 
 geoRotor = mp_geo_load(['plots/' Date '/RotorOpt' num2str(Iter) '.txt']);
 for iSrf = 1:numel(geoRotor)
@@ -209,14 +207,13 @@ fopt = m1*Cost + m2*sum(Tstd) + m3*PowerLoss;
 
 %%
 currentsMapOpt = linspace(0, max(currents), 21);
-PhaseAnglesOpt = -180:5:180;%linspace(0,90,20);
+PhaseAnglesOpt = -180:5:180;
 TorquesMapOpt = zeros(numel(currents), numel(PhaseAnglesOpt), numel(angles));
 
 for iCurrents = 1:numel(currentsMapOpt)
     for iPhase = 1:numel(PhaseAnglesOpt)
         PMSMmotor.setCurrentOptions(ApplicationCurrent, PolePairs, NumberWindings, PhaseAnglesOpt(iPhase));
         for iAngle = 1:numel(angles)
-%             disp(num2str(angles(iAngle)));
             PMSMmotor.setRotationAngle(angles(iAngle));
             PMSMmotor.setCurrent(currentsMapOpt(iCurrents), angles(iAngle));
             PMSMmotor.solveMagneticPotentialNewton();
