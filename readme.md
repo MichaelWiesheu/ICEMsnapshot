@@ -11,9 +11,11 @@ In order to run the code you need
 - Matlab Global Optimization Toolbox
 
 No other packages need to be downloaded at this point. To provide a fully working snapshot, we already include here the code snapshots for the packages
+
 - GeoPDEs (https://rafavzqz.github.io/geopdes/)
 - The NURBS toolbox (https://de.mathworks.com/matlabcentral/fileexchange/26390-nurbs-toolbox-by-d-m-spink)
 - Tensor Toolbox (https://www.tensortoolbox.org/)
+- 
 which we give full credit to.
 
 
