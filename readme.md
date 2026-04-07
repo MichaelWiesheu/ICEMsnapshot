@@ -2,7 +2,7 @@
 
 Arxiv version: https://arxiv.org/abs/2402.19065
 
-Printed version: will follow
+Printed version: https://ieeexplore.ieee.org/document/10700065
 
 # Prerequisites
 
@@ -42,4 +42,3 @@ Michael Wiesheu, Theodor Komann, Melina Merkel, Sebastian Schöps, Stefan Ulbric
 
 # Support:
 michael.wiesheu@tu-darmstadt.de
-komann@mathematik.tu-darmstadt.de
